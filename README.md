@@ -6,7 +6,7 @@
 
 ## Description
 
-A photo gallery web application made using Django.
+A photo gallery web application made using Django where a user can view pictures of a certain category, see the location of the picture and also copy the link of the picture they like.
 
 ## Live Link
 
