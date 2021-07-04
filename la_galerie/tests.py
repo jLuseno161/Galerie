@@ -41,4 +41,23 @@ class LocationTestClass(TestCase):
         location = Location.get_locations()
         self.assertTrue(location)
 
+class ImageTestClass(TestCase):
+
+    def setUp(self):
+
+        self.location = Location(location_name='Nairobi')
+        self.location.save_location()
+
+        self.category = Category(cat_name='Mountains')
+        self.category.save_category()
+
+        self.mountain= Image(id=1,image_name = 'Mountains', description ='Mountain Test',location=self.location,category=self.category)
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.mountain,Image))
     
+    def test_save_image(self):
+        self.mountain.save_image()
+        editors = Image.objects.all()
+        self.assertTrue(len(editors) > 0)
+
