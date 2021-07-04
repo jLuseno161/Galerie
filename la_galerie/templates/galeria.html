@@ -47,19 +47,15 @@
                     </div>
                     <div class="modal-body">
                         <p class="text-justify">{{img.description}}</p>
-                        <p class="text-left">{{img.location}}</p>
-                        <p class="text-left">{{img.category}}</p>
+                        <p class="text-left"><b>Location:</b> {{img.location}}</p>
+                        <p class="text-left"><b>Category:</b> {{img.category}}</p>
                     </div>
                     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
                         <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
-                            value="{{img.image.cdn_url}}">
+                            value="{{img.image.url}}">
                     </div>
                     <button type="button" class="btn btn-outline-dark mt-2"
                         onclick="copy('#{{image.id}}-url')">Copy</button>
-
-                    <span id="img{{image.id}}">{{img.image.cdn_url}}</span>
-                    <button onclick="copyToClipboard('img{{image.id}}')" class="btn no-border text-white"><i
-                            class="far fa-copy">Copy</i></button>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
