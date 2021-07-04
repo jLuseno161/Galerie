@@ -1,0 +1,54 @@
+#welcome_text {
+    font-size: 35pt;
+    color: #fff;
+}
+
+#home {
+    text-align: center;
+    background-image: url("/static/img/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#description {
+    font-size: x-large;
+    font-style: italic;
+}
+
+#overlay {
+    padding: 18%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(to left, rgb(5, 5, 82),rgba(0, 11, 14, 0));
+
+}
+.intro hr{
+    width: 150px;
+   
+}
+.intro {
+    color: white;
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.intro h1 {
+    font-size: 54pt;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: coral;
+}
+
+footer {
+    background-color: rgb(5, 5, 82);
+    border: none;
+    box-sizing: border-box;
+    color: goldenrod;
+    padding: 20px;
+    overflow: hidden;
+    height: 60px;
+    width: 100%;
+}

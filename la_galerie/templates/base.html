@@ -15,11 +15,12 @@
     {% block styles %}
     {% bootstrap_css %}
 
-    <link rel="stylesheet" href="/">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
         .navbar {
             background-color: rgb(5, 5, 82);
             border: none;
+            border-radius: 0%;
         }
     </style>
     {% endblock %}
@@ -28,7 +29,7 @@
 
 <body>
     <div class="navbar navbar-inverse" role="navigation" style="padding: 0.5%;">
-        <div class="container-fluid" >
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -79,5 +80,4 @@
     {% bootstrap_javascript %}
     {% endblock %}
 </body>
-
 </html>

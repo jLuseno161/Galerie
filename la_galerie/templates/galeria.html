@@ -3,7 +3,17 @@
 {% block content %}
 {{block.super}}
 
-<h1 class='text-center'>La Galeria</h1>
+<div id="home">
+    <div id="overlay" class="row">
+
+        <div class="intro">
+            <h1 id="welcome_text">Welcome to La Galeria</h1>
+            <hr>
+            <h3 id="description">Home of Art</h3>
+        </div>
+    </div>
+</div>
+<h1 class='text-center' style="font-style: italic;">My Art</h1>
 <div class="container">
     <hr />
     {% for img in images%}
@@ -53,4 +63,8 @@
     </div>
     {%endfor%}
 </div>
+
+<footer class="footer">
+    <p class="text-center">© Joy Kolia 2021. All Rights Reserved</p>
+</footer>
 {% endblock %}
