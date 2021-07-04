@@ -2,40 +2,15 @@
 
 {% block content %}
 {{block.super}}
+
+<h1 class='text-center'>La Galeria</h1>
 <div class="container">
-    <form class="col-md-6" role="search" action="{% url 'search_category' %}">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search image" name="category">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-
-    </form>
-
-    <ul class="navbar-nav mr-auto" style="list-style: none">
-        <li class="dropdown">
-            <a class="nav-link dropdown-toggle location" href="#" id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;">
-                Location
-            </a>
-            <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
-                {% for location in location %}
-                <p style="margin-left:2%"><a class="dropdown-item"
-                        href="/location/{{location.location_name}}">{{location.location_name}}</a></p>
-                {%endfor%}
-            </div>
-        </li>
-    </ul>
-
-</div>
-<div class="container">
+    <hr />
     {% for img in images%}
-    <div class="col-md-3">
+    <div class="col-lg-3">
         <a href="#{{img.id}}" data-toggle="modal" data-target="#{{img.id}}">
             <img src="{{img.image.url}}" class="img-responsive" alt="{{image.name}}" style="width:100%;width:100%">
         </a>
-
         <div class="modal fade" id="{{img.id}}" role="dialog">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -54,9 +29,18 @@
                         <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
                             value="{{img.image.url}}">
                     </div>
-                    <button type="button" class="btn btn-outline-dark mt-2"
-                        onclick="copy('#{{image.id}}-url')">Copy</button>
 
+                    <button type="button" onclick="copyToClipboard();">Copy text</button>
+
+                    <script>
+                        function copyToClipboard() {
+                            var copyText = document.getElementById("{{img.id}}-url");
+                            copyText.select();
+                            copyText.setSelectionRange(0, 99999)
+                            document.execCommand("copy");
+                            alert(copyText);
+                        }
+                    </script>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>

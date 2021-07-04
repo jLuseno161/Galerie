@@ -2,6 +2,17 @@
 
 {% block content %}
 {{block.super}}
+<div class="row">
+    {% if image%}
+    <h3 class="text-center">Found {{ image|length }} images on {{message}}</h3>
+    <div class="container">
+        <hr />
+    </div>
+    {% else %}
+    <h2>Nothing for you here, kindly search again</h2>
+    {% endif %}
+
+</div>
 <div class="container">
     {% for img in image%}
     <div class="col-md-3">
