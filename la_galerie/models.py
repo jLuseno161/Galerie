@@ -46,6 +46,10 @@ class Image(models.Model):
         self.delete()
 
     @classmethod
+    def update_img(cls, id, image):
+        cls.objects.filter(id=id).update(image=image)
+
+    @classmethod
     def fetch_by_location(cls,location_name):
         location = cls.objects.filter(location__location_name = location_name).all()
         return location
