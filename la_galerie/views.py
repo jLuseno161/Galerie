@@ -19,3 +19,8 @@ def search_category(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+def image_properties(request,image_id):
+
+    image = Image.get_image_by_id(image_id)
+
+    return render(request, {"image" : image})
