@@ -1,0 +1,75 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    <form class="col-md-6" role="search" action="{% url 'search_category' %}">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search image" name="category">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+
+    </form>
+
+    <ul class="navbar-nav mr-auto" style="list-style: none">
+        <li class="dropdown">
+            <a class="nav-link dropdown-toggle location" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;">
+                Location
+            </a>
+            <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
+                {% for location in location %}
+                <p style="margin-left:2%"><a class="dropdown-item"
+                        href="/location/{{location.location_name}}">{{location.location_name}}</a></p>
+                {%endfor%}
+            </div>
+        </li>
+    </ul>
+
+</div>
+<div class="container">
+    {% for img in images%}
+    <div class="col-md-3">
+        <a href="#{{img.id}}" data-toggle="modal" data-target="#{{img.id}}">
+            <img src="{{img.image.url}}" class="img-responsive" alt="{{image.name}}" style="width:100%;width:100%">
+        </a>
+
+        <div class="modal fade" id="{{img.id}}" role="dialog">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{img.image_name}}</h4>
+                        <img src="{{img.image.url}}" class="img-responsive" alt="Image"
+                            style="width:100%;max-width:100%">
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-justify">{{img.description}}</p>
+                        <p class="text-left">{{img.location}}</p>
+                        <p class="text-left">{{img.category}}</p>
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
+                        <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
+                            value="{{img.image.cdn_url}}">
+                    </div>
+                    <button type="button" class="btn btn-outline-dark mt-2"
+                        onclick="copy('#{{image.id}}-url')">Copy</button>
+
+                    <span id="img{{image.id}}">{{img.image.cdn_url}}</span>
+                    <button onclick="copyToClipboard('img{{image.id}}')" class="btn no-border text-white"><i
+                            class="far fa-copy">Copy</i></button>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

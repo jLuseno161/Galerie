@@ -1,0 +1,39 @@
+{% load bootstrap3 %}
+{% load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    {% if title %}
+    <title>La Galeria - {{title}}</title>
+    {% else %}
+    <title> La Galeria </title>
+    {% endif %}
+
+    {% block styles %}
+    {% bootstrap_css %}
+
+    <link rel="stylesheet" href="/">
+    {% endblock %}
+
+</head>
+
+<body>
+    <div class="container" style="padding:20px;">
+        <div class="col-md-12 well">
+            <h1 class='text-center'>La Galeria</h1>
+            <hr style="border-top:1px dotted #ccc;" />
+            {% block content %} {%endblock%}
+
+        </div>
+    </div>
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+
+</html>
