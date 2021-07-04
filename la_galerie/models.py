@@ -10,7 +10,7 @@ class Location(models.Model):
     def get_locations(cls):
         location = Location.objects.all()
         return location
-
+    
 class Category(models.Model):
     cat_name = models.CharField(max_length=100)
 
@@ -39,7 +39,7 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
-        @classmethod
+    @classmethod
     def fetch_by_location(cls,location_name):
         location = cls.objects.filter(location__location_name = location_name).all()
         return location
