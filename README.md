@@ -14,13 +14,12 @@ A photo gallery web application made using Django where a user can view pictures
 
 ## User Story
 
-* User can view all photos on index page ordered by the date they were posted
-* Hovering on an image will reveal more information about it; the title, description, location and time posted.
-* User can click on the copy button on an image to copy its url for sharing purposes
-* Clicking an image will toggle a lightbox with an expanded view of the image
 * User can navigate to other images while on the lightbox view.
 * User can search photos based on their categories
 * User can browse photos based on the location they were taken
+* User is able to view different photos that interest them.
+* When user clicks on a single photo it expands it and user is able to view the details of the photo in a modal.
+* User is able to view and copy link to the photo
 
 ## Prerequisites
 
