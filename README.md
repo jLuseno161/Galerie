@@ -14,7 +14,6 @@ A photo gallery web application made using Django where a user can view pictures
 
 ## User Story
 
-* User can navigate to other images while on the lightbox view.
 * User can search photos based on their categories
 * User can browse photos based on the location they were taken
 * User is able to view different photos that interest them.
