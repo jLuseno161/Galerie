@@ -15,9 +15,20 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
+from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config(
+  cloud_name = "galeria2",
+  api_key = "883299394337371",
+  api_secret = "D1AwbwEnV0Kgz_mFMchy9MERLuM",
+  secure = True
+)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -40,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'la_galerie.apps.LaGalerieConfig',
     'bootstrap3',
+    'cloudinary',
+
 ]
 
 MIDDLEWARE = [
