@@ -38,9 +38,17 @@
                         <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
                             value="{{img.image.url}}">
                     </div>
-                    <button type="button" class="btn btn-outline-dark mt-2"
-                        onclick="copy('#{{image.id}}-url')">Copy</button>
+                    <button type="button" onclick="copyToClipboard();">Copy</button>
 
+                    <script>
+                        function copyToClipboard() {
+                            var copyText = document.getElementById("{{img.id}}-url");
+                            copyText.select();
+                            copyText.setSelectionRange(0, 99999)
+                            document.execCommand("copy");
+                            alert('url copied');
+                        }
+                    </script>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
