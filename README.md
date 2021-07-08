@@ -11,8 +11,13 @@ A photo gallery web application made using Django where a user can view pictures
 ## Live Link
 
 [View Site](https://galeria0.herokuapp.com)
-[Admin] (https://galeria0.herokuapp.com/admin/)  with credentials
+
+## Admin Dashboard
+
+[Admin Dashboard Login](https://galeria0.herokuapp.com/admin/)  with credentials
+
     username : `moringa`
+
     password : `Moringa20`
 
 ## User Story
