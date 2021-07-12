@@ -18,7 +18,7 @@ A photo gallery web application made using Django where a user can view pictures
 
     username : `moringa`
 
-    password : `Moringa20`
+    password : `@Moringa20`
 
 ## User Story
 
